@@ -1,0 +1,24 @@
+#^M control character indicate file use CRLF line endings is in dos/windows
+
+eric@ localization_strings (master) ▶ dos2unix french_codebase_content.csv.bak french_codebase_content.csv
+dos2unix: Binary symbol 0x0B found at line 3883
+dos2unix: Skipping binary file french_codebase_content.csv.bak
+dos2unix: Binary symbol 0x0B found at line 3883
+dos2unix: Skipping binary file french_codebase_content.csv
+
+-fix mangled cote d ivore country
+
+-file uses latin-1 iso-8859-1 encoding can see left quote: “ as â <80> <9C> in by clicking...
+	- handy websites https://www.charbase.com/201c-unicode-left-double-quotation-mark
+	- http://www.ltg.ed.ac.uk/~richard/utf-8.cgi?input=“&mode=char
+iconv -f iso-8859-1 -t utf-8 < french_codebase_content.csv > french_codebase_content.utf8.csv
+
+
+https://superuser.com/questions/199799/vim-shows-strange-characters-91-92
+
+handle EXPIRY DATE translation <92> hex code point for private use two name?, looks like left quote issue
+http://www.ltg.ed.ac.uk/~richard/utf-8.cgi?input=92&mode=hex
+
+
+# search in vim with \%x92
+# script replaces these hex codes with proper utf8 character
