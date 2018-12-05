@@ -11,6 +11,7 @@ Script unzips file, replaces corrupted Côte d'voire name and replaces private u
 Some useful resources:
 - [look up unicode characters](https://www.charbase.com/)
 - [look up unicode and other encoding by hex codes](http://www.ltg.ed.ac.uk/~richard/utf-8.cgi?input=92&mode=hex)
+- [unicode debug table](https://www.i18nqa.com/debug/utf8-debug.html)
 
 Includes content for codebases:
  - ClientService
