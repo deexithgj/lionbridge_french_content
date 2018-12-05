@@ -15,6 +15,8 @@ dos2unix tmp/french_converted.utf8.csv
 # replace with function call output https://stackoverflow.com/questions/5777170/substitution-with-sed-bash-function
 
 # https://unix.stackexchange.com/questions/435043/replace-utf-8-characters-with-shell-perl
+# ... elipses
+perl -CSD -Mutf8 -pe "s/\\xe2\\x80\\xa6/\\x{2026}/g" tmp/french_converted.utf8.csv | 
 # left single quote
 perl -CSD -Mutf8 -pe "s/\\xc2\\x91|\\xe2\\x80\\x98/\\x{2018}/g" tmp/french_converted.utf8.csv | 
 # right single quote
