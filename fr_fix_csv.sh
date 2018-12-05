@@ -16,12 +16,12 @@ dos2unix tmp/french_converted.utf8.csv
 
 # https://unix.stackexchange.com/questions/435043/replace-utf-8-characters-with-shell-perl
 # left single quote
-perl -CSD -Mutf8 -pe "s/[\\xc2\\x91]/\\x{2018}/g" tmp/french_converted.utf8.csv | 
+perl -CSD -Mutf8 -pe "s/\\xc2\\x91|\\xe2\\x80\\x98/\\x{2018}/g" tmp/french_converted.utf8.csv | 
 # right single quote
-perl -CSD -Mutf8 -pe "s/[\\xc2\\x92]/\\x{2019}/g" |
+perl -CSD -Mutf8 -pe "s/\\xc2\\x92|\\xe2\\x80\\x99/\\x{2019}/g" |
 # left double quote
-perl -CSD -Mutf8 -pe "s/[\\xc2\\x93]/\\x{201c}/g" |
+perl -CSD -Mutf8 -pe "s/\\xc2\\x93|\\xe2\\x80\\x9c/\\x{201c}/g" |
 # right double quote
-perl -CSD -Mutf8 -pe "s/[\\xc2\\x94]/\\x{201d}/g" > french_content.csv
+perl -CSD -Mutf8 -pe "s/\\xc2\\x94|\\xe2\\x80\\x9d/\\x{201d}/g" > french_content.csv
 
 rm -rf tmp/
